@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "SWEA - 1936 solution"
+date:   2021-08-08 18:30:00 +0900
+categories: algorithm
+tags: [algorithm, SWEA, solution]
+---
+**1936.**[1대1 가위바위보](https://swexpertacademy.com/main/code/problem/problemDetail.do?problemLevel=1&contestProbId=AV5PjKXKALcDFAUq&categoryId=AV5PjKXKALcDFAUq&categoryType=CODE&problemTitle=&orderBy=FIRST_REG_DATETIME&selectCodeLang=PYTHON&select-1=1&pageSize=10&pageIndex=2)
+
+풀이
+
+```python
+a, b = list(map(int, input().split()))
+
+if a - b == 1 or a - b == -2:
+    print('A')
+else:
+    print('B')
+```
+

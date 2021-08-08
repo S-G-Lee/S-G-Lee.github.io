@@ -1,11 +1,11 @@
 ---
 layout: post
 title:  "SWEA - 1545 solution"
-date:   2021-07-26 18:25:00 +0900
+date:   2021-08-08 18:30:00 +0900
 categories: algorithm
 tags: [algorithm, SWEA, solution]
 ---
-**1545.**[거꾸로 출력해 보아요](https://swexpertacademy.com/main/code/problem/problemList.do?problemLevel=1&contestProbId=&categoryId=&categoryType=&problemTitle=&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=1&pageSize=10&pageIndex=2#none)
+**1545.**[거꾸로 출력해 보아요](https://swexpertacademy.com/main/code/problem/problemDetail.do?problemLevel=1&contestProbId=AV2gbY0qAAQBBAS0&categoryId=AV2gbY0qAAQBBAS0&categoryType=CODE&problemTitle=&orderBy=FIRST_REG_DATETIME&selectCodeLang=PYTHON&select-1=1&pageSize=10&pageIndex=2)
 
 풀이
 

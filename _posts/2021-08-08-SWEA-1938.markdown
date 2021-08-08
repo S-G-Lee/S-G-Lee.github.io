@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "SWEA - 1938 solution"
+date:   2021-08-08 18:30:00 +0900
+categories: algorithm
+tags: [algorithm, SWEA, solution]
+---
+**1938.**[아주 간단한 계산기](https://swexpertacademy.com/main/code/problem/problemDetail.do?problemLevel=1&contestProbId=AV5PjsYKAMIDFAUq&categoryId=AV5PjsYKAMIDFAUq&categoryType=CODE&problemTitle=&orderBy=FIRST_REG_DATETIME&selectCodeLang=PYTHON&select-1=1&pageSize=10&pageIndex=2)
+
+풀이
+
+```python
+a, b = list(map(int, input().split()))
+
+print(a + b)
+print(a - b)
+print(a * b)
+print(int(a / b))
+```
+

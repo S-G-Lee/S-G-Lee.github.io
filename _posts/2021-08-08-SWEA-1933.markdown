@@ -1,0 +1,23 @@
+---
+layout: post
+title:  "SWEA - 1933 solution"
+date:   2021-08-08 18:30:00 +0900
+categories: algorithm
+tags: [algorithm, SWEA, solution]
+---
+**1933.**[간단한 N 의 약수](https://swexpertacademy.com/main/code/problem/problemDetail.do?problemLevel=1&contestProbId=AV5PhcWaAKIDFAUq&categoryId=AV5PhcWaAKIDFAUq&categoryType=CODE&problemTitle=&orderBy=FIRST_REG_DATETIME&selectCodeLang=PYTHON&select-1=1&pageSize=10&pageIndex=2)
+
+풀이
+
+```python
+N = int(input())
+
+result = ''
+for i in range(1, N+1):
+    if not N % i:
+        result = result + str(i) + ' '
+result = result[:-1]
+
+print(result)
+```
+

@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "SWEA - 2019 solution"
+date:   2021-08-08 18:30:00 +0900
+categories: algorithm
+tags: [algorithm, SWEA, solution]
+---
+**2019.**[더블더블](https://swexpertacademy.com/main/code/problem/problemDetail.do?problemLevel=1&contestProbId=AV5QDEX6AqwDFAUq&categoryId=AV5QDEX6AqwDFAUq&categoryType=CODE&problemTitle=&orderBy=FIRST_REG_DATETIME&selectCodeLang=PYTHON&select-1=1&pageSize=10&pageIndex=2)
+
+풀이
+
+```python
+T = int(input())
+
+result = ''
+for i in range(T+1):
+    result = result + str(2 ** i) + ' '
+result = result[:-1]
+
+print(result)
+```
+
