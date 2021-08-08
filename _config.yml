@@ -1,8 +1,9 @@
-title: Hamilton
-description: A minimal and beautiful Jekyll theme best for writing and note-taking.
+title: S-G-Lee GitBlog
+description: 이제 막 개발자로 태어나려는 사람의 블로그입니다.
 author: SGLee
 avatar: /myphoto.jpg
 email: qowppp@gmail.com
+lang: ko
 
 plugins:
   - jekyll-seo-tag
@@ -32,7 +33,7 @@ exclude:
 twitter:
   username: S-G-Lee
   card: summary
-logo: logo.png
+logo: myphoto.jpg
 social:
   name: SGLee
   links:
