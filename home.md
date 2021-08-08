@@ -4,4 +4,5 @@ title: Home
 permalink: /
 ---
 
-Home
+Another minimal style of Jekyll theme for writers.
+
