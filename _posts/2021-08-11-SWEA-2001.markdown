@@ -1,0 +1,35 @@
+---
+layout: post
+title:  "SWEA - 2001 solution"
+date:   2021-08-11 18:30:00 +0900
+categories: algorithm
+tags: [algorithm, SWEA, solution]
+---
+**2001.**[파리 퇴치](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PzOCKAigDFAUq&categoryId=AV5PzOCKAigDFAUq&categoryType=CODE&problemTitle=2001&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=&pageSize=10&pageIndex=1)
+
+풀이
+
+```python
+T = int(input())
+
+for tc in range(1, T + 1):
+
+    N, M = list(map(int, input().split()))
+
+    fly_arr = []
+    for i in range(N):
+        temp = list(map(int, input().split()))
+        fly_arr.append(temp)
+    
+    killfly_arr = [[0 for col in range(N-M+1)] for row in range(N-M+1)]   
+    for i in range(N-M+1):
+        for j in range(N-M+1):
+            for k in range(M):
+                for l in range(M):
+                    killfly_arr[i][j] += fly_arr[i+k][j+l]
+    
+    
+    result = max(map(max, killfly_arr))
+    print(f'#{tc} {result}')
+```
+
