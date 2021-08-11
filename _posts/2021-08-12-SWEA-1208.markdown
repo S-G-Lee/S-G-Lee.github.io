@@ -1,0 +1,41 @@
+---
+layout: post
+title:  "SWEA - 1208 solution"
+date:   2021-08-12 18:30:00 +0900
+categories: algorithm
+tags: [algorithm, SWEA, solution]
+---
+**1208.**[[S/W 문제해결 기본\] 1일차 - Flatten ](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV139KOaABgCFAYh&categoryId=AV139KOaABgCFAYh&categoryType=CODE&problemTitle=1208&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=&pageSize=10&pageIndex=1)
+
+풀이
+
+```python
+T = 10
+
+answer = []
+for tc in range(1, T + 1):
+
+    N = int(input())
+    boxes = list(map(int, input().split()))
+    
+    result = 0
+
+    for _ in range(N):
+        box_min = min(boxes)
+        box_max = max(boxes)
+        if box_max - box_min > 1:
+            boxes[boxes.index(box_min)] += 1
+            boxes[boxes.index(box_max)] -= 1
+        else:
+            break
+
+    box_min = min(boxes)
+    box_max = max(boxes)
+    result = box_max - box_min
+
+    answer.append(result)    
+
+for tc in range(1, T+1):
+    print(f'#{tc} {answer[tc-1]}')
+```
+
