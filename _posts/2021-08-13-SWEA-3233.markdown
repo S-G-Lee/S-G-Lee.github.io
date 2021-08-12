@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "SWEA - 3233 solution"
+date:   2021-08-13 18:30:00 +0900
+categories: algorithm
+tags: [algorithm, SWEA, solution]
+---
+**3233.**[정삼각형 분할 놀이](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWAe5G8afT0DFAUw&categoryId=AWAe5G8afT0DFAUw&categoryType=CODE&problemTitle=3233&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=&pageSize=10&pageIndex=1)
+
+풀이
+
+```python
+T = int(input())
+
+answer = []
+for tc in range(1, T + 1):
+
+    A, B = map(int, input().split())
+
+    total = 0
+    for i in range(A//B):
+        total += (2 * i) + 1
+
+    answer.append(total)
+
+for tc in range(1, T+1):
+    print(f'#{tc} {answer[tc-1]}')
+```
+
