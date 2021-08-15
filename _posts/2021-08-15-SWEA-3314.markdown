@@ -1,0 +1,31 @@
+---
+layout: post
+title:  "SWEA - 3314 solution"
+date:   2021-08-15 18:30:00 +0900
+categories: algorithm
+tags: [algorithm, SWEA, solution]
+---
+**3314.**[보충학습과 평균 ](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWBnA2jaxDsDFAWr&categoryId=AWBnA2jaxDsDFAWr&categoryType=CODE&problemTitle=3314&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=&pageSize=10&pageIndex=1)
+
+풀이
+
+```python
+T = int(input())
+
+answer = []
+for tc in range(1, T + 1):
+
+    scores = list(map(int, input().split()))
+
+    for i in range(len(scores)):
+        if scores[i] < 40:
+            scores[i] = 40
+
+    result = sum(scores)//len(scores)
+
+    answer.append(result)
+
+for tc in range(1, T+1):
+    print(f'#{tc} {answer[tc-1]}')
+```
+
