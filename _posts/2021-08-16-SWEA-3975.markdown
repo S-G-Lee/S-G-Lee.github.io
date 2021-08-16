@@ -1,0 +1,33 @@
+---
+layout: post
+title:  "SWEA - 3975 solution"
+date:   2021-08-16 18:30:00 +0900
+categories: algorithm
+tags: [algorithm, SWEA, solution]
+---
+**3975.**[승률 비교하기 ](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWIX_iFqjg4DFAVH&categoryId=AWIX_iFqjg4DFAVH&categoryType=CODE&problemTitle=3975&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=&pageSize=10&pageIndex=1)
+
+풀이
+
+```python
+T = int(input())
+
+answer = []
+for tc in range(1, T + 1):
+
+    A, B, C, D = map(int, input().split())
+
+    result = ''
+    if A*D > B*C:
+        result = 'ALICE'
+    elif A*D < B*C:
+        result = 'BOB'
+    else:
+        result = 'DRAW'
+
+    answer.append(result)
+
+for tc in range(1, T+1):
+    print(f'#{tc} {answer[tc-1]}')
+```
+
