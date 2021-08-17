@@ -1,0 +1,41 @@
+---
+layout: post
+title:  "SWEA - 4751 solution"
+date:   2021-08-18 18:30:00 +0900
+categories: algorithm
+tags: [algorithm, SWEA, solution]
+---
+**4751.**[다솔이의 다이아몬드 장식](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWSNw5jKzwMDFAUr&categoryId=AWSNw5jKzwMDFAUr&categoryType=CODE&problemTitle=4751&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=&pageSize=10&pageIndex=1)
+
+풀이
+
+```python
+T = int(input())
+
+answer = []
+for tc in range(1, T + 1):
+
+    word = input()
+    N = len(word)
+
+    board = [['.' for _ in range(4*N + 1)] for _ in range(5)]
+
+    for i in range(N):
+        board[0][4*i + 2] = '#'
+        board[1][4*i + 1] = '#'
+        board[1][4*i + 3] = '#'
+        board[2][4*i] = '#'
+        board[2][4*i + 2] = word[i]
+        board[2][4*i + 4] = '#'
+        board[3][4*i + 1] = '#'
+        board[3][4*i + 3] = '#'
+        board[4][4*i + 2] = '#'        
+
+    result = [''.join(x) for x in board]
+    answer.append(result)
+
+for tc in range(1, T+1):
+    for i in range(5):
+        print(f'{answer[tc-1][i]}')
+```
+

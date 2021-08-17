@@ -1,0 +1,40 @@
+---
+layout: post
+title:  "SWEA - 4676 solution"
+date:   2021-08-18 18:30:00 +0900
+categories: algorithm
+tags: [algorithm, SWEA, solution]
+---
+**4676.**[늘어지는 소리 만들기 ](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWRKWITqfvIDFAV8&categoryId=AWRKWITqfvIDFAV8&categoryType=CODE&problemTitle=4676&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=&pageSize=10&pageIndex=1)
+
+풀이
+
+```python
+T = int(input())
+
+answer = []
+for tc in range(1, T + 1):
+
+    word = input()
+    H = int(input())
+    pos_list = list(map(int, input().split()))
+
+    length = len(word)
+    hyphen_num = [0] * (length + 1)
+
+    for i in pos_list:
+        hyphen_num[i] += 1
+    
+    result = ''
+    for i in range(length):
+        result += '-' * hyphen_num[i]
+        result += word[i]
+    result += '-' * hyphen_num[-1]
+
+    answer.append(result)
+    
+
+for tc in range(1, T+1):
+    print(f'#{tc} {answer[tc-1]}')
+```
+
