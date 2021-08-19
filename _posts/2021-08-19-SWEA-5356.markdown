@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "SWEA - 5162 solution"
-date:   2021-08-18 18:30:00 +0900
+date:   2021-08-19 18:30:00 +0900
 categories: algorithm
 tags: [algorithm, SWEA, solution]
 ---
