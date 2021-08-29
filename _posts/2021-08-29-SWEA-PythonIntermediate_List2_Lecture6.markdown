@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SWEA - PythonIntermediate_List2_Lecture5 solution"
+title:  "SWEA - PythonIntermediate_List2_Lecture6 solution"
 date:   2021-08-29 18:30:00 +0900
 categories: algorithm
 tags: [algorithm, SWEA, solution]
