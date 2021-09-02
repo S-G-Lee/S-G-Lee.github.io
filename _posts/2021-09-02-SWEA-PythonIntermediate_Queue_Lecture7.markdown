@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SWEA - PythonIntermediate_Queue_Lecture6 solution"
+title:  "SWEA - PythonIntermediate_Queue_Lecture7 solution"
 date:   2021-09-02 18:30:00 +0900
 categories: algorithm
 tags: [algorithm, SWEA, solution]
