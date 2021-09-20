@@ -1,0 +1,38 @@
+---
+layout: post
+title:  "BOJ - 2309 solution"
+date:   2021-09-20 18:30:00 +0900
+categories: algorithm
+tags: [algorithm, BOJ, solution]
+---
+[2309. 일곱 난쟁이](https://www.acmicpc.net/problem/2309)
+
+풀이
+
+```python
+height = []
+for _ in range(9):
+    height.append(int(input()))
+
+height_sum = sum(height)
+
+result = height[:]
+check = 0
+for i in range(9):
+    tempheight = height_sum - height[i]
+    for j in range(i+1, 9):
+        temptempheight = tempheight -height[j]
+        if temptempheight == 100:
+            check = 1
+            result.remove(height[i])
+            result.remove(height[j])
+            break
+    if check:
+        break
+
+result.sort()
+for i in result:
+    print(i)
+            
+```
+
