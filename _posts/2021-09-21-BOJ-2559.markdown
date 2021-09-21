@@ -1,0 +1,33 @@
+---
+layout: post
+title:  "BOJ - 2559 solution"
+date:   2021-09-21 18:30:00 +0900
+categories: algorithm
+tags: [algorithm, BOJ, solution]
+---
+[2559. 수열](https://www.acmicpc.net/problem/2559)
+
+풀이
+
+```python
+N, M = map(int, input().split())
+
+temperature = list(map(int, input().split()))
+
+length = 1
+tempsum = 0
+result = -10000000
+for i in range(N):
+    if length < M:
+        tempsum += temperature[i]
+        length += 1
+    else:
+        tempsum += temperature[i]
+        if result < tempsum:
+            result = tempsum
+        tempsum -= temperature[i-M+1]
+
+print(result)
+
+```
+
