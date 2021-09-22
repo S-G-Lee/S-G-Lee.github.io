@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "BOJ - 2605 solution"
+date:   2021-09-22 18:30:00 +0900
+categories: algorithm
+tags: [algorithm, BOJ, solution]
+---
+[2605. 줄 세우기](https://www.acmicpc.net/problem/2605)
+
+풀이
+
+```python
+N = int(input())
+
+order = list(map(int, input().split()))
+
+line = [0] * N
+
+for i in range(N):
+    line[i] = i + 1
+    idx = i
+    for _ in range(order[i]):
+        line[idx], line[idx - 1] = line[idx - 1], line[idx]
+        idx -= 1
+
+result = ' '.join(map(str, line))
+print(result)
+```
+
