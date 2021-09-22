@@ -1,0 +1,63 @@
+---
+layout: post
+title:  "BOJ - 2564 solution"
+date:   2021-09-22 18:30:00 +0900
+categories: algorithm
+tags: [algorithm, BOJ, solution]
+---
+[2564. 경비원](https://www.acmicpc.net/problem/2564)
+
+풀이
+
+```python
+W, H = map(int, input().split())
+N = int(input())
+coords = []
+for i in range(N):
+    coords.append(list(map(int, input().split())))
+    # coords[i][0] = 1 : 북, 2 : 남, 3: 서, 4 : 동
+start = list(map(int, input().split()))
+
+result = 0
+for coord in coords:
+    if start[0] == 1:
+        if coord[0] == 1:
+            result += abs(start[1] - coord[1])
+        elif coord[0] == 2:
+            result += H + min((W - start[1]) + (W - coord[1]), start[1] + coord[1])
+        elif coord[0] == 3:
+            result += start[1] + coord[1]
+        else:            
+            result += (W - start[1]) + coord[1]
+    elif start[0] == 2:
+        if coord[0] == 1:
+            result += H + min((W - start[1]) + (W - coord[1]), start[1] + coord[1])
+        elif coord[0] == 2:
+            result += abs(start[1] - coord[1])
+        elif coord[0] == 3:
+            result += start[1] + (H - coord[1])
+        else:            
+            result += (W - start[1]) + (H - coord[1])
+    elif start[0] == 3:
+        if coord[0] == 1:
+            result += start[1] + coord[1]
+        elif coord[0] == 2:
+            result += (H - start[1]) + coord[1]
+        elif coord[0] == 3:
+            result += abs(start[1] - coord[1])
+        else:            
+            result += W + min((H - start[1]) + (H - coord[1]), start[1] + coord[1])
+    else:
+        if coord[0] == 1:
+            result += start[1] + (W - coord[1])
+        elif coord[0] == 2:
+            result += (H - start[1]) + (W - coord[1])
+        elif coord[0] == 3:
+            result += W + min((H - start[1]) + (H - coord[1]), start[1] + coord[1])
+        else:            
+            result += abs(start[1] - coord[1])    
+
+print(result)
+
+```
+
