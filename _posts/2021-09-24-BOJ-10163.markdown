@@ -1,0 +1,31 @@
+---
+layout: post
+title:  "BOJ - 10163 solution"
+date:   2021-09-24 18:30:00 +0900
+categories: algorithm
+tags: [algorithm, BOJ, solution]
+---
+[10163. 색종이](https://www.acmicpc.net/problem/10163)
+
+풀이
+
+```python
+board = [[0 for _ in range(1001)] for _ in range(1001)]
+
+N = int(input())
+paper = [list(map(int, input().split())) for _ in range(N)] # paper[i] : x1, y1, w, h
+
+for n in range(N):
+    for i in range(paper[n][0], paper[n][0] + paper[n][2]):
+        for j in range(paper[n][1], paper[n][1] + paper[n][3]):
+            board[i][j] = n+1
+
+for n in range(N):
+    total = 0
+    for i in range(1001):
+        for j in range(1001):
+            if board[i][j] == n+1:
+                total += 1
+    print(total)
+```
+
