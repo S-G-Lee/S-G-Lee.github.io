@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SWEA - PythonAdvanced_DynamicProgrammingApplication_Lecture3 solution"
+title:  "SWEA - PythonAdvanced_DynamicProgrammingApplication_Lecture4 solution"
 date:   2021-09-26 18:30:00 +0900
 categories: algorithm
 tags: [algorithm, SWEA, solution]
