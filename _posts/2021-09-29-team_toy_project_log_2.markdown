@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "팀 토이 프로젝트 일지 1"
+title:  "팀 토이 프로젝트 일지 2"
 date:   2021-09-29 18:30:00 +0900
 categories: developement
 tags: [developement, toy project, team, log]
