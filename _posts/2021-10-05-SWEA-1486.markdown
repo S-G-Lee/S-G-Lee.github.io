@@ -1,0 +1,51 @@
+---
+layout: post
+title:  "SWEA - 1486 solution"
+date:   2021-10-05 18:30:00 +0900
+categories: algorithm
+tags: [algorithm, SWEA, solution]
+---
+[1486. 장훈이의 높은 선반](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV2b7Yf6ABcBBASw&categoryId=AV2b7Yf6ABcBBASw&categoryType=CODE&problemTitle=1486&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=&pageSize=10&pageIndex=1)
+
+풀이
+
+```python
+def exhaustive_search(N, B, heights, i, tot):
+    global result
+
+    if i == N:
+        if tot >= B:
+            if result > tot - B:
+                result = tot - B
+        return
+    elif tot >= B:
+        if result > tot - B:
+                result = tot - B
+        return
+
+    exhaustive_search(N, B, heights, i+1, tot + heights[i])
+    exhaustive_search(N, B, heights, i+1, tot)
+
+
+
+T = int(input())
+
+answer = []
+for tc in range(1, T + 1):
+
+    N, B = map(int, input().split())
+
+    heights = list(map(int, input().split()))
+    
+    picked = [0]
+
+    result = sum(heights)
+
+    exhaustive_search(N, B, heights, 0, 0)
+                
+    answer.append(result)
+
+for tc in range(1, T + 1):
+    print(f'#{tc} {answer[tc-1]}')
+```
+
