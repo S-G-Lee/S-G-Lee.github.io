@@ -1,0 +1,57 @@
+---
+layout: post
+title:  "SWEA - 1267 solution"
+date:   2021-10-09 18:30:00 +0900
+categories: algorithm
+tags: [algorithm, SWEA, solution]
+---
+**1267.**[[S/W 문제해결 응용\] 10일차 - 작업순서](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV18TrIqIwUCFAZN&categoryId=AV18TrIqIwUCFAZN&categoryType=CODE&problemTitle=1267&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=&pageSize=10&pageIndex=1)
+
+풀이
+
+```python
+T = 10
+
+answer = []
+for tc in range(1, T + 1):
+
+    V, E = map(int, input().split())
+
+    nodes = list(map(int, input().split()))
+
+    graph = [[0 for _ in range(V)] for _ in range(V)]
+    visited = [0 for _ in range(V)]
+    visited_count = 0
+    possible = []
+    link_count = [0 for _ in range(V)]
+
+    for i in range(E):
+        graph[nodes[2*i]-1][nodes[2*i+1]-1] = 1
+        link_count[nodes[2*i+1]-1] += 1
+
+    result = []
+    while visited_count < V:
+
+        for i in range(V):
+            if not visited[i]:
+                if link_count[i] == 0:
+                    possible.append(i)
+
+        for v in possible:
+            visited[v] = 1
+            visited_count += 1
+            result.append(v+1)
+            for i in range(V):
+                if graph[v][i] == 1:
+                    link_count[i] -= 1
+        
+        possible = []
+    
+    result = ' '.join(map(str, result))
+
+    answer.append(result)
+
+for tc in range(1, T+1):
+    print(f'#{tc} {answer[tc-1]}')
+```
+
