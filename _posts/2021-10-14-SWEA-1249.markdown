@@ -1,0 +1,73 @@
+---
+layout: post
+title:  "SWEA - 1249 solution"
+date:   2021-10-14 18:30:00 +0900
+categories: algorithm
+tags: [algorithm, SWEA, solution]
+---
+[1249. [S/W 문제해결 응용] 4일차 - 보급로](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV15QRX6APsCFAYD&categoryId=AV15QRX6APsCFAYD&categoryType=CODE&problemTitle=1249&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=&pageSize=10&pageIndex=1)
+
+풀이
+
+```python
+INF = 100000000
+
+
+def is_possible(N, i, j):
+    if (0 <= i < N) and (0 <= j < N):
+        return True
+    return False
+
+delta = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+
+
+def dijkstra(N, board):
+    D = [[INF for _ in range(N)] for _ in range(N)]
+    D[0][0] = 0
+    visited = [[0 for _ in range(N)] for _ in range(N)]
+
+    candidates = set([(0, 0)])
+    for _ in range(N*N):
+        min_dist = INF
+        checklist = []
+        vi, vj = -1, -1
+        for i, j in candidates:
+            if not visited[i][j] and min_dist > D[i][j]:
+                min_dist = D[i][j]
+                vi, vj = i, j
+            elif visited[i][j]:
+                checklist.append((i, j))
+        
+        for i, j in checklist:
+            candidates.remove((i, j))
+    
+        visited[vi][vj] = 1
+
+        for di, dj in delta:
+            if is_possible(N, vi+di, vj+dj) and not visited[vi+di][vj+dj]:
+                candidates.add((vi+di, vj+dj))
+                if D[vi+di][vj+dj] > D[vi][vj] + board[vi+di][vj+dj]:
+                    D[vi+di][vj+dj] = D[vi][vj] + board[vi+di][vj+dj]
+    
+    return D[N-1][N-1]
+
+
+T = int(input())
+
+answer = []
+for tc in range(1, T + 1):
+
+    N = int(input())
+
+    board = [list(map(int, input())) for _ in range(N)]
+    
+    result = dijkstra(N, board)
+    
+    answer.append(result)
+
+for tc in range(1, T + 1):
+    print(f'#{tc} {answer[tc-1]}')
+
+
+```
+
